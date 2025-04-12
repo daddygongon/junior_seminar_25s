@@ -1,0 +1,62 @@
+#+OPTIONS: ^:{}
+#+STARTUP: indent nolineimages overview num
+#+TITLE: kick off(terminal, wsl, vscode, fish, github)
+#+AUTHOR: Shigeto R. Nishitani
+#+EMAIL:     (concat "shigeto_nishitani@mac.com")
+#+LANGUAGE:  jp
+#+OPTIONS:   H:4 toc:t num:2
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+
+* activate wsl
+on Powershell from Terminal
+: wsl --install
+再起動の表示が出たら，システムを再起動.
+
+再度，
+: wsl --install
+: Mircosoft StoreからUbuntuをインストールできませんでした
+の表示．それでも問題なさそう．
+
+その後， 
+#+begin_src shell
+> Enter new UNIX username: XXXX 
+> New password: XXXX 
+> Retype new passowrd: XXXX
+#+end_src
+でコマンドプロンプト
+
+terminalを再起動するとUbuntuがpull down menuに見える．
+
+* wsl(terminal, shell, emacs, github)設定
+** terminal設定
+目を保護するため，light modeを推奨．
+** installed claの確認
+#+begin_src shell
+> ruby –version
+> ls
+> pwd
+> git –version
+#+end_src
+** fish
+#+begin_src shell
+> sudo apt update
+> sudo apt install fish
+> chsh -s /usr/bin/fish
+#+end_src
+** emacs
+#+begin_src shell
+> sudo apt-get install emacs-nox
+#+end_src
+** git or github
+#+begin_src shell
+> ssh-keygen
+> cd .ssh
+> cat id_rsa.pub
+> explorer.exe https://github.com
+> git clone git@github.com:daddygongon/comp_a_25s.git
+#+end_src
+- make account
+- ssh config
+
+
+

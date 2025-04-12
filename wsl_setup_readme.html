@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="jp" xml:lang="jp">
+<head>
+<!-- 2025-04-09 Wed 15:30 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>kick off(terminal, wsl, vscode, fish, github)</title>
+<meta name="author" content="Shigeto R. Nishitani" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/search.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/search.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">kick off(terminal, wsl, vscode, fish, github)</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org7f11460">1. activate wsl</a></li>
+<li><a href="#orge85b2e6">2. wsl(terminal, shell, emacs, github)設定</a>
+<ul>
+<li><a href="#org94170b6">2.1. terminal設定</a></li>
+<li><a href="#org928e1a3">2.2. installed claの確認</a></li>
+<li><a href="#orgf3cb284">2.3. fish</a></li>
+<li><a href="#orgb10aadc">2.4. emacs</a></li>
+<li><a href="#org29c3324">2.5. git or github</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7f11460" class="outline-2">
+<h2 id="org7f11460"><span class="section-number-2">1.</span> activate wsl</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+on Powershell from Terminal
+</p>
+<pre class="example">
+wsl --install
+</pre>
+
+<p>
+再起動の表示が出たら，システムを再起動.
+</p>
+
+<p>
+再度，
+</p>
+<pre class="example">
+wsl --install
+Mircosoft StoreからUbuntuをインストールできませんでした
+</pre>
+
+<p>
+の表示．それでも問題なさそう．
+</p>
+
+<p>
+その後， 
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">&gt; Enter new UNIX username: XXXX 
+&gt; New password: XXXX 
+&gt; Retype new passowrd: XXXX
+</pre>
+</div>
+<p>
+でコマンドプロンプト
+</p>
+
+<p>
+terminalを再起動するとUbuntuがpull down menuに見える．
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge85b2e6" class="outline-2">
+<h2 id="orge85b2e6"><span class="section-number-2">2.</span> wsl(terminal, shell, emacs, github)設定</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org94170b6" class="outline-3">
+<h3 id="org94170b6"><span class="section-number-3">2.1.</span> terminal設定</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+目を保護するため，light modeを推奨．
+</p>
+</div>
+</div>
+<div id="outline-container-org928e1a3" class="outline-3">
+<h3 id="org928e1a3"><span class="section-number-3">2.2.</span> installed claの確認</h3>
+<div class="outline-text-3" id="text-2-2">
+<div class="org-src-container">
+<pre class="src src-shell">&gt; ruby &#8211;version
+&gt; ls
+&gt; pwd
+&gt; git &#8211;version
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf3cb284" class="outline-3">
+<h3 id="orgf3cb284"><span class="section-number-3">2.3.</span> fish</h3>
+<div class="outline-text-3" id="text-2-3">
+<div class="org-src-container">
+<pre class="src src-shell">&gt; sudo apt update
+&gt; sudo apt install fish
+&gt; chsh -s /usr/bin/fish
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb10aadc" class="outline-3">
+<h3 id="orgb10aadc"><span class="section-number-3">2.4.</span> emacs</h3>
+<div class="outline-text-3" id="text-2-4">
+<div class="org-src-container">
+<pre class="src src-shell">&gt; sudo apt-get install emacs-nox
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org29c3324" class="outline-3">
+<h3 id="org29c3324"><span class="section-number-3">2.5.</span> git or github</h3>
+<div class="outline-text-3" id="text-2-5">
+<div class="org-src-container">
+<pre class="src src-shell">&gt; ssh-keygen
+&gt; cd .ssh
+&gt; cat id_rsa.pub
+&gt; explorer.exe https://github.com
+&gt; git clone git@github.com:daddygongon/comp_a_25s.git
+</pre>
+</div>
+<ul class="org-ul">
+<li>make account</li>
+<li>ssh config</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Shigeto R. Nishitani</p>
+<p class="date">Created: 2025-04-09 Wed 15:30</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
