@@ -7,6 +7,13 @@
 #+OPTIONS:   H:4 toc:t num:2
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 
+* zoom
+Zoom ミーティングに参加する
+https://kwansei-gakuin.zoom.us/j/96919760597?pwd=dURyMklGQXRNTEdIaGRZMTc3d2F2UT09
+
+ミーティング ID: 969 1976 0597
+パスコード: 421095
+
 * activate wsl
 on Powershell from Terminal
 : wsl --install
