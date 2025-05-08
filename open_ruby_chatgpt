@@ -1,0 +1,33 @@
+#!/usr/bin/env ruby
+require 'open3'
+
+def open_with_explorer(path)
+  system("explorer.exe", path)
+end
+
+def open_with_powershell(path)
+  system("powershell.exe", "/c", "start", path)
+end
+
+if ARGV.empty?
+  open_with_explorer('.')
+else
+  ARGV.each do |arg|
+    if arg.include?("http")
+      open_with_explorer(arg)
+    elsif File.exist?(arg)
+      stdout, stderr, status = Open3.capture3("wslpath", "-w", arg)
+      if status.success?
+        windows_path = stdout.strip
+        unless system("powershell.exe", "/c", "start", windows_path)
+          puts "open: #{arg} : Failed to open"
+        end
+      else
+        puts "open: #{arg} : Failed to convert path"
+      end
+    else
+      puts "open: #{arg} : No such file or directory"
+    end
+  end
+end
+
