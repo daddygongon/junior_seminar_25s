@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+require 'command_line/global'
+
+p ARGV
+p url = ARGV[0]
+res = command_line "wslpath -w #{url}"
+p path = res.stdout
+
+#comm = "explorer.exe #{path}"
+comm = "powershell.exe \/c start #{path}"
+puts comm
+system com
