@@ -10,7 +10,7 @@ def open_with_powershell(path)
 end
 
 if ARGV.empty?
-  open_with_explorer('.')
+  open_with_powershell('.')
 else
   ARGV.each do |arg|
     if arg.include?("http")
@@ -19,7 +19,7 @@ else
       stdout, stderr, status = Open3.capture3("wslpath", "-w", arg)
       if status.success?
         windows_path = stdout.strip
-        unless system("powershell.exe", "/c", "start", windows_path)
+        unless open_with_powershell(windows_path)
           puts "open: #{arg} : Failed to open"
         end
       else
