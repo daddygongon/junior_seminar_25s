@@ -1,12 +1,13 @@
 #!/usr/bin/env ruby
-require 'command_line/global'
+#require 'command_line/global'
+require 'open3'
 
 p ARGV
 p url = ARGV[0]
-res = command_line "wslpath -w #{url}"
-p path = res.stdout
+out, err, status = Open3.capture3 "wslpath -w #{url}"
+p path = out
 
 #comm = "explorer.exe #{path}"
-comm = "powershell.exe \/c start #{path}"
+comm = "powershell.exe /c start #{path}"
 puts comm
-system com
+system comm
