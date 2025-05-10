@@ -5,6 +5,7 @@ if ARGV.length < 1
   # Windowsでエクスプローラを開く。
   # 'explorer.exe' はWindowsでのみ有効なので、他のOSでは動作しない。
   system('explorer.exe', '.')
+
 else
   ARGV[1..].each do |arg|
     if arg.include?('http')
@@ -15,10 +16,12 @@ else
         # WSLのパスをWindowsパスに変換
         wslpath_result, wslpath_err, wslpath_status = Open3.capture3('wslpath', '-w', arg)
         if wslpath_status.success?
-          windows_path = wslpath_result.strip
+          p windows_path = wslpath_result.strip
           # PowerShellでファイル/フォルダを開く
           # 'powershell.exe', '/c', 'start' はWindowsでのみ有効
           system('powershell.exe', '/c', 'start', windows_path)
+          p comm = "powershell.exe /c start #{windows_path}"
+#          system comm
         else
           puts "open: #{arg} : Failed to open (wslpath failed)"
           $stderr.puts wslpath_err # エラーを標準エラー出力に出力
