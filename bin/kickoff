@@ -1,0 +1,37 @@
+#!/usr/bin/env ruby
+require 'optparse'
+
+OptionParser.new do |opt|
+  opt.on('-i','initial operation') {puts "
+"}
+  opt.on('-w','wsl shell commands') {puts "
+- ls  : list
+- cd  : change directory
+- pwd : print working directory
+- mv  : move
+- cp  : copy
+- mkdir : make directory
+- rm  : remove
+  - rm -rf hash # directoryを空に，
+  # recursive 繰り返し（再帰的に）, force
+  # recur <- occur
+  # May the force be with you. (Yoda)
+- cat : catenate # 中身を出力する
+  - cat chapter_9* > c9_string.rb # '>' redirect
+  # '*' wild card, なんでも文字
+  - cat results | pbcopy(clip.exe) # '|' pipe
+- history
+  - history -r | tail -20 | pbcopy
+- bat : batcat
+- open 
+- tree
+"}
+  opt.on('-e','wsl editor key binds') {puts "
+- c-p(previous)
+- c-a(ahead), c-b(back), c-f(forward), c-e(end)
+- c-n(next)
+- c-d(delete), c-k(kill), del
+"}
+end.parse!(ARGV)
+
+

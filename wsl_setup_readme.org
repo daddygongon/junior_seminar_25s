@@ -14,6 +14,10 @@ https://kwansei-gakuin.zoom.us/j/96919760597?pwd=dURyMklGQXRNTEdIaGRZMTc3d2F2UT0
 ミーティング ID: 969 1976 0597
 パスコード: 421095
 
+* powershell error
+- 管理者権限でterminalを実行
+- Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
+-
 * activate wsl
 on Powershell from Terminal
 : wsl --install
