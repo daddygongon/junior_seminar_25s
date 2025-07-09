@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+require 'optparse'
+
+class Edit
+    def initialize(file)
+        p comm = "code #{file}"
+        system comm
+    end
+end
+
+class List
+    def initialize(file)
+        p comm = "batcat --theme Coldark-Cold #{file}"
+        system comm
+    end
+end
+
+OptionParser.new do |opt|
+    opt.on('-e FILE',
+        '--edit FILE',
+        'edit FILE by vscode') do |file| 
+            Edit.new(file)
+    end
+    opt.on('-l FILE',
+        '--list FILE',
+        'cat FILE') do |file|
+            List.new(file)
+    end
+    opt.parse!(ARGV)
+end
