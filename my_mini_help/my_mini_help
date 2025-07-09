@@ -16,13 +16,11 @@ class List
 end
 
 OptionParser.new do |opt|
-    opt.on('-e FILE',
-        '--edit FILE',
+    opt.on('-e FILE', '--edit FILE',
         'edit FILE by vscode') do |file| 
             Edit.new(file)
     end
-    opt.on('-l FILE',
-        '--list FILE',
+    opt.on('-l FILE', '--list FILE',
         'cat FILE') do |file|
             List.new(file)
     end
